@@ -95,3 +95,107 @@ function sortNumbers(array) {
 }
 
 console.log(sortNumbers([5, 6, 2, 3, 8, 9, 10]));
+
+//template literals
+
+let firstName = "john";
+let lastName = "Fu";
+
+let fullName = `${firstName} ${lastName}`;
+
+console.log(fullName);
+
+let searchResults = 5;
+let output = `${
+  searchResults == 0
+    ? "No search results"
+    : searchResults == 1
+    ? "1 result"
+    : `${searchResults} results`
+}`;
+console.log(output);
+
+// arrow functions
+
+getFullName = (fName, lName) => {
+  let fullName = `${fName} ${lName}`;
+  return fullName;
+};
+
+console.log(getFullName("Mike", "Smith"));
+
+sortBy = (sortType = "Name", users) => console.log("Sorting by: ", sortType);
+
+sortBy();
+sortBy("moms");
+
+//for loops
+
+let fruits = ["bananas", "apples", "pears", "pineapple", "cherries"];
+
+// console.log("For Loop:");
+// for (let i = 0; i < fruits.length; i++) {
+//   console.log(fruits[i]);
+// }
+
+// console.log("For-Of:");
+// for (let fruit of fruits) {
+//   console.log(fruit);
+// }
+
+// console.log("forEach:");
+// fruits.forEach((fruit) => {
+//   console.log(fruit);
+// });
+
+console.log("Map:");
+newFruits = fruits
+  .map((fruit) => {
+    console.log(fruit);
+    return `${fruit} eaten`;
+  })
+  .filter((value) => {
+    if (value == "bananas eaten") {
+      return false;
+    } else {
+      return true;
+    }
+  });
+console.log(newFruits);
+
+//destructering
+
+// let person = {
+//   firstName= "John",
+//   lastName= "Fu"
+// }
+
+// const {firsName, lastName} = person;
+
+// or
+
+// let firstName = person.firstName;
+// let lastName = person.lastName;
+
+let user = [
+  { firstName: "Pacman", lastName: "Jones" },
+  (user) => {
+    console.log("I set user: ", user);
+  },
+];
+
+const [newUser, setUser] = user;
+console.log(newUser);
+setUser({ firstName: "coolio", lastName: "star" });
+
+//direct mapping
+
+let [fruit1, fruit2, fruit3] = [
+  "bananas",
+  "apples",
+  "pears",
+  "pineapple",
+  "cherries",
+];
+console.log(fruit1);
+console.log(fruit2);
