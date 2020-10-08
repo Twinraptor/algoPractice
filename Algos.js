@@ -199,3 +199,35 @@ let [fruit1, fruit2, fruit3] = [
 ];
 console.log(fruit1);
 console.log(fruit2);
+
+// promises
+let testPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve({
+      firstName: "Lucy",
+      lastName: "vanPelt",
+    });
+  }, 1000);
+});
+
+testPromise.then((response) => {
+  console.log("hereis the reponse after  1s: ");
+  console.log(response);
+});
+console.log("this is asynch after the code for promise");
+
+// api fetch (promises)
+
+let userPromise = fetch("https://randomuser.me/api/");
+console.log(userPromise);
+userPromise
+  .then((response) => {
+    return response.json();
+  })
+  .then((resData) => {
+    console.log(resData.results[0].name.first);
+    console.log(resData.results[0].name.last);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
